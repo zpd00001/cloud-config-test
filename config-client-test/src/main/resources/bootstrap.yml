@@ -1,0 +1,21 @@
+
+server:
+  port: 8085
+spring:
+  application:
+    name: cloud-config
+  cloud:
+    config:
+      profile: dev
+      discovery:
+        enabled: true
+        service-id: cloud-config-server
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10001/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
